@@ -7,37 +7,59 @@ import Banner from "/src/assets/User/banner.png";
 import FaqItem from "./FaqItem";
 import ForDoctor from "/src/assets/User/fordoctor.png"
 import Footer from "../../componets/usercomponets/navbar/Footer";
+import { motion } from "framer-motion";
 
 function Home() {
     return (
         <div className="w-full h-auto">
-            <div className="w-full h-16 bg-blue-800"></div>
-            <div style={{ backgroundImage: `url(${DoctorImage})` }} className="w-full h-auto bg-cover bg-center sm:bg-contain sm:bg-no-repeat md:bg-cover md:bg-center flex flex-col justify-center items-center text-center px-4 sm:px-8 md:px-16 py-10">
-                <span className="text-2xl font-semibold sm:text-xl md:text-3xl">
-                    Over 100 million people from
-                </span>
-                <span className="text-2xl font-semibold sm:text-xl md:text-3xl">
-                    190+ countries trust TeleCare with their Health Decisions
-                </span>
-                <br />
-                <input
-                    className="w-full sm:w-[80%] md:w-[600px] h-[40px] bg-white mt-4 px-3 rounded-md"
-                    type="search"
-                    placeholder="Search"
-                />
-                <span className="mt-5 text-sm sm:text-base">
-                    Discover specialized medical insights from real patient questions
-                </span>
-                <span className="text-sm sm:text-base">
-                    answered by expert physicians.
-                </span>
-                <div className="w-[90%] sm:w-full text-lg md:text-2xl not-italic mt-3">
-                    <h1 className="text-center">
-                        From little to life-altering issues, we've got you covered
-                    </h1>
+            <div className="w-full h-16 bg-blue-800 "></div>
+            <div
+                style={{ backgroundImage: `url(${DoctorImage})` }}
+                className="w-full h-auto bg-cover   bg-center sm:bg-contain sm:bg-no-repeat md:bg-cover md:bg-center flex flex-col justify-center items-center text-center px-4 sm:px-8 md:px-16 py-10">
+                <div className="flex flex-col  md:w-[80%] items-center rounded-lg bg-white/5 backdrop-blur-md px-4 py-2">
+                <div className="flex flex-col  items-center ">
+                    <motion.span
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        className="text-2xl font-extrabold text-white sm:text-xl md:text-3xl px-4 py-2 rounded-lg"
+                    >
+                        Over 100 million people from
+                    </motion.span>
+
+                    <motion.span
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+                        className="text-3xl font-extrabold text-white sm:text-xl md:text-3xl"
+                    >
+                        190+ countries trust TeleCare with their Health Decisions
+                    </motion.span>
+                    <br />
+                    <input
+                        className="w-full sm:w-[80%] md:w-[600px] h-[40px] bg-white mt-4 px-3 rounded-md"
+                        type="search"
+                        placeholder="Search"
+                    />
+                    <span className="mt-5 text-sm font-serif sm:text-base text-white">
+                        Discover specialized medical insights from real patient questions
+                    </span>
+                    <span className="text-sm text-white font-serif sm:text-base">
+                        answered by expert physicians.
+                    </span>
+                    <div className="w-[90%] sm:w-full text-lg md:text-2xl not-italic mt-3">
+                        <h1 className="text-center text-white font-bold">
+                            From little to life-altering issues, we've got you covered
+                        </h1>
+                    </div>
+                </div> 
                 </div>
-                <div className="w-[90%] sm:w-full h-auto mt-5 flex justify-center">
-                    <img className="rounded-xl w-full sm:w-[90%] md:w-[80%] object-cover opacity-85" src={Image} alt="Doctor" />
+                <div className="w-[90%] sm:w-full h-[80px] md:h-[250px] mt-5 flex justify-center">
+                    <img
+                        className="rounded-xl w-full sm:w-[90%] md:w-[80%] object-cover opacity-85"
+                        src={Image}
+                        alt="Doctor"
+                    />
                 </div>
                 <Slider />
             </div>
@@ -51,28 +73,7 @@ function Home() {
                         a doctor anytime, anywhere
                     </span>
                     <div className="flex flex-col md:flex-row gap-4 md:gap-10 mt-5 justify-center items-center">
-                        <div className="w-[250px] md:w-[300px] h-[250px] md:h-[300px] flex flex-col items-center justify-center rounded-md bg-amber-900 bg-[url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSlhfIQAYJ9uzGqAiP6_ZVvvP9TT_9-YKh9QbKqYiCq-6_yrJIt')] bg-cover">
-                            <button>
-                                <img className="w-[100px] md:w-[150px]" src="https://assets.icliniq.com/modern-homepage/Chat-blue-icon.svg" alt="chatting" />
-                            </button>
-                            <p className="text-white text-lg md:text-2xl font-bold text-center">Chat <br />
-                                Consultation
-                            </p>
-                        </div>
-                        <div className="w-[250px] md:w-[300px] h-[250px] md:h-[300px] flex flex-col items-center justify-center rounded-md bg-amber-700 bg-[url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT8uTup68_YYYrGyWbyNffhWqWu1wzubdl-Rfi1Tufon39pO4TL')] bg-cover">
-                            <button><img className="w-[100px] md:w-[150px]" src="https://assets.icliniq.com/modern-homepage/phone-blue-icon.svg" alt="phone call" /></button>
-                            <p className="text-white text-lg md:text-2xl font-bold text-center">
-                                Phone <br />
-                                Consultation
-                            </p>
-                        </div>
-                        <div className="w-[250px] md:w-[300px] h-[250px] md:h-[300px] flex flex-col items-center justify-center rounded-md bg-amber-800 bg-[url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS13kvCuSvKy9rsN7DPdi8qhOPkzOhDf18jjtODrVjpwnssWAHh')] bg-cover">
-                            <button><img className="w-[100px] md:w-[150px]" src="https://assets.icliniq.com/modern-homepage/video-blue-icon.svg" alt="video call" /></button>
-                            <p className="text-white text-lg md:text-2xl font-bold text-center">
-                                Video <br />
-                                Consultation
-                            </p>
-                        </div>
+                        
                     </div>
                     <p className="text-white font-light mt-3 text-sm md:text-base">
                         Get your first online doctor consultation
@@ -137,7 +138,7 @@ function Home() {
                     </button>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </div>
     );
 }

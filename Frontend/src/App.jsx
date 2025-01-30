@@ -16,11 +16,11 @@ function App() {
 
   return (
     <>
-      {/* <NavBar />
-      <Home/> */}
+      <NavBar />
+      <Home/>
       {/* <Landing/> */}
       {/* <Signup/> */}
-      <Login/>
+      {/* <Login/> */}
       
       
       

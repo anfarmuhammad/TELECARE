@@ -17,11 +17,10 @@ function NavBar() {
           aria-label="Toggle Menu">☰
         </button>
         <ul className="hidden md:flex mr-[500px] flex-row gap-10 font-bold text-white mt-3">
+          <li>HOME</li>
           <li>MEDICAL ARTICLES <i class="fa-solid fa-caret-down"></i></li>
           <li>CONSULT A PHYSICIAN</li>
           <li>ABOUT</li>
-          <input className='bg-white h-[40px] text-black rounded-full p-1 mb-1' type="text" placeholder='Search for symptoms' />
-          
         </ul>
         
         <div className="hidden md:flex gap-8 text-white text-[15px]">
