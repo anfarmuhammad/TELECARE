@@ -6,12 +6,15 @@ import Slider from "./Slider";
 import Banner from "/src/assets/User/banner.png";
 import FaqItem from "./FaqItem";
 import ForDoctor from "/src/assets/User/fordoctor.png"
-import Footer from "../../componets/usercomponets/navbar/Footer";
 import { motion } from "framer-motion";
+import NavBar from "../../componets/Usercomponets/NavBar";
+import Footer from "../../componets/Usercomponets/Footer";
 
 function Home() {
     return (
         <div className="w-full h-auto">
+            <NavBar/>
+            
             <div className="w-full h-16 bg-blue-800 "></div>
             <div
                 style={{ backgroundImage: `url(${DoctorImage})` }}
@@ -64,7 +67,7 @@ function Home() {
                 <Slider />
             </div>
 
-            <div style={{ backgroundImage: `url(${ServiceImage})` }} className="w-full h-auto bg-blue-950 flex flex-col justify-center items-center px-4 sm:px-8 py-10">
+            <div style={{ backgroundImage: `url(${ServiceImage})` }} className="w-full min-h-screen bg-blue-950 flex flex-col justify-center items-center px-4 sm:px-8 py-10">
                 <div className="text-center">
                     <span className="text-blue-400 text-lg md:text-2xl">
                         Text, Video Call or Phone
@@ -138,7 +141,9 @@ function Home() {
                     </button>
                 </div>
             </div>
-            <Footer />
+            <Footer/>
+            
+            
         </div>
     );
 }

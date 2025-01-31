@@ -21,7 +21,7 @@ const faqs = [
 ];
 
 const FaqItem= () => {
-  const [openIndex, setOpenIndex] = useState(null); // Track which item is open
+  const [openIndex, setOpenIndex] = useState(null); 
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -31,7 +31,7 @@ const FaqItem= () => {
     <div className="max-w-2xl mx-auto  p-4">
       {faqs.map((faq, index) => (
         <div key={index} className="border-b border-gray-400 py-4">
-          {/* Question */}
+         
           <div
             className="flex justify-between items-center cursor-pointer"
             onClick={() => toggleFAQ(index)}

@@ -1,9 +1,16 @@
 import React from "react";
-import { motion } from "framer-motion";
+
 import SignUpImage from "/src/assets/Common/sginupimage.png"
-import Footer from "../../componets/usercomponets/navbar/Footer";
+import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+
 
 function Signup() {
+  const navigate = useNavigate();
+  const handleNavigate =()=>{
+    navigate("/Home")
+
+  }
   return (
     <div>
       <div style={{ backgroundImage: `url(${SignUpImage})` }} className="w-full min-h-screen  flex flex-col bg-cover  px-4">
@@ -57,7 +64,7 @@ function Signup() {
                 type="tel"
                 placeholder="Mobile Number"
               />
-              <button className="w-[200px] h-[40px] bg-green-700 rounded-full text-white hover:bg-green-800 transition">
+              <button className="w-[200px] h-[40px] bg-green-700 rounded-full text-white hover:bg-green-800 transition"  onClick={handleNavigate}>
                 SUBMIT
               </button>
             </div>
@@ -81,7 +88,7 @@ function Signup() {
         </div>
 
       </div>
-      <Footer/>
+      
     </div>
 
   );

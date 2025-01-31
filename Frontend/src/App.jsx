@@ -1,10 +1,7 @@
 import React from "react"
-import NavBar from "./componets/usercomponets/navbar/NavBar"
-import Home from "./Pages/User/Home"
-import Landing from "./Pages/Comon/Landing"
-import Signup from "./Pages/Comon/Signup"
-import Login from "./Pages/Comon/Login"
 
+
+import Common from "./Routes/CommonPage"
 
 
 
@@ -16,11 +13,10 @@ function App() {
 
   return (
     <>
-      <NavBar />
-      <Home/>
-      {/* <Landing/> */}
-      {/* <Signup/> */}
-      {/* <Login/> */}
+      {/* <NavBar />
+      <Home/> */}
+      
+      <Common/>
       
       
       

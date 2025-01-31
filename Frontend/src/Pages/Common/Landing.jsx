@@ -1,8 +1,17 @@
 import React from 'react';
 import LandingImage from '/src/assets/Common/landing.png';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 function Landing() {
+    const navigate = useNavigate();
+    const handleNavigate = () => {
+        navigate("/Login");
+    }
+    const signupnavigate = useNavigate();
+    const signuphandleNavigate = () => {
+        signupnavigate("/SignUp");
+    }
     return (
         <div style={{ backgroundImage: `url(${LandingImage})` }}
             className='w-full h-screen  bg-cover bg-center text-white flex flex-col items-center'>
@@ -42,14 +51,14 @@ function Landing() {
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.5 }}
-                >
+                    onClick={handleNavigate}>
                     Login
                 </motion.button>
                 <motion.button className='w-[150px] h-[45px] bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-full shadow-md transition'
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                >
+                 onClick={signuphandleNavigate}>
                     Signup
                 </motion.button>
             </div>
