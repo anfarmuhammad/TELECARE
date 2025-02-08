@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "/src/assets/User/image 5.png"
+
 
 const specialties = [
   { icon: "👨‍⚕️", label: "Cardiology" },
@@ -36,7 +38,7 @@ const Slider = () => {
   };
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto bg-white rounded-xl mt-[-20px] h-[80px] md:h-[150px] md:p-4  shadow-lg overflow-hidden">
+    <div   className="relative w-full bg-cover max-w-4xl mx-auto bg-white rounded-xl mt-[-20px] md:mt-[80px] h-[80px] md:h-[150px] md:p-4  shadow-lg overflow-hidden">
       <button
         onClick={scrollLeft}
         className="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 bg-white shadow-md rounded-full hover:bg-gray-100"

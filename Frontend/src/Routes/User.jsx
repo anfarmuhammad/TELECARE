@@ -1,11 +1,16 @@
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
 function User() {
   return (
-    <div>
-      
-    </div>
+    <Router>
+      <Routes>
+        
+        <Route path="/home" element={<Home />} />
+
+      </Routes>
+    </Router>
   )
 }
 

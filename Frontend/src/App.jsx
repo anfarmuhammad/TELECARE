@@ -1,11 +1,6 @@
-import React from "react"
-
-
 import Common from "./Routes/CommonPage"
-
-
-
-
+import About from "./Pages/User/About"
+import Consult from "./Pages/User/Consult"
 
 
 function App() {
@@ -13,13 +8,14 @@ function App() {
 
   return (
     <>
-      {/* <NavBar />
-      <Home/> */}
-      
-      <Common/>
-      
-      
-      
+
+
+      {/* <Common/>   */}
+        <About/>
+      {/* <Consult />  */}
+
+
+
     </>
   )
 }
