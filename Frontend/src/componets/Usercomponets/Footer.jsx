@@ -4,7 +4,7 @@ import { FaFacebookF, FaLinkedinIn, FaInstagram, FaXTwitter, FaYoutube } from "r
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-800 text-white py-10">
+    <footer className="bg-blue-700 text-white py-10">
       <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center md:items-start">
         <div className="flex flex-col items-center md:items-start">
           <img src={Logo} alt="TeleCare Logo" className="w-20 h-auto mb-4" />

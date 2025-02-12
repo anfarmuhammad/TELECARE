@@ -80,7 +80,7 @@ function About() {
 
             <div className="p-6 ">
                 <h2 className="text-2xl font-bold text-center mb-6">Our Top Specialties</h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 p-16 md:grid-cols-3 lg:grid-cols-4 gap-16">
                     {specialties.map((specialty, index) => (
                         <div
                             key={index}
