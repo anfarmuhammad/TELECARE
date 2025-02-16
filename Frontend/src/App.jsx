@@ -1,9 +1,14 @@
 import Common from "./Routes/CommonPage"
 import About from "./Pages/User/About"
-import Consult from "./Pages/User/Consult"
 import { BrowserRouter } from "react-router-dom"
 import CommonPage from "./Routes/CommonPage"
 import User from "./Routes/User"
+import DoctorSignup from "./Pages/Doctor/DoctorSignup"
+import Appoinments from "./Pages/User/Appoinments"
+import Doctor from "./Routes/Doctor"
+import AcademicDetailsForm from "./Pages/Doctor/AcademicDetailsForm"
+import DoctorProfileForm from "./Pages/Doctor/DoctorProfileForm"
+
 
 
 function App() {
@@ -11,13 +16,15 @@ function App() {
 
   return (
     <>
-     
-        <BrowserRouter>
-      
-          <CommonPage/>
-          <User/>
-          
-        </BrowserRouter>
+       {/* <DoctorProfileForm/> */}
+      {/* <AcademicDetailsForm/> */}
+      <BrowserRouter>
+
+        <CommonPage />
+        <User />
+        <Doctor/>
+
+      </BrowserRouter>
 
 
 

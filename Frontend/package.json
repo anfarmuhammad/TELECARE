@@ -9,6 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  
+  
   "dependencies": {
     "@tailwindcss/vite": "^4.0.0",
     "framer-motion": "^12.0.6",

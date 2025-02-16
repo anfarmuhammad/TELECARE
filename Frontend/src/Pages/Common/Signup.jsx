@@ -8,9 +8,14 @@ import { useNavigate } from 'react-router-dom';
 function Signup() {
   const navigate = useNavigate();
   const handleNavigate =()=>{
-    navigate("/")
+    navigate("/home")
 
   }
+  const doctorsignup = useNavigate();
+  const doctorNavigate =()=>{
+    doctorsignup("/doctorsignup")
+  }
+
   return (
     <div>
       <div style={{ backgroundImage: `url(${SignUpImage})` }} className="w-full min-h-screen  flex flex-col bg-cover  px-4">
@@ -79,7 +84,7 @@ function Signup() {
               </div>
               <div className="bg-gray-800 p-4 rounded-md w-full max-w-xs text-center">
                 <p className="mb-2 text-sm text-white">Are You a Doctor?</p>
-                <button className="bg-white text-blue-900 px-4 py-2 rounded-md font-medium hover:bg-gray-300 transition-all">
+                <button className="bg-white text-blue-900 px-4 py-2 rounded-md font-medium hover:bg-gray-300 transition-all" onClick={doctorNavigate}>
                   SIGN UP HERE →
                 </button>
               </div>

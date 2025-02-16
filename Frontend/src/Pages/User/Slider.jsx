@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Image from "/src/assets/User/image 5.png"
+
 
 
 const specialties = [

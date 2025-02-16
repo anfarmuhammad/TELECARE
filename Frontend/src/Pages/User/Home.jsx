@@ -1,8 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Main from "/src/assets/User/main.png"
-import Image from "/src/assets/User/image 5.png";
-import ServiceImage from "/src/assets/User/service.png";
 import Slider from "./Slider";
 import Banner from "/src/assets/User/banner.png";
 import Phone from "/src/assets/User/phone.png"
@@ -20,17 +17,17 @@ const images = [
     "https://img.freepik.com/premium-photo/creative-collage-telehealth-consultation_23-2149488755.jpg?w=1380",
     "https://img.freepik.com/free-photo/creative-collage-telehealth-consultation_23-2149488761.jpg?t=st=1739366768~exp=1739370368~hmac=418071",
     "https://img.freepik.com/free-photo/creative-collage-telehealth-consultation_23-2149488758.jpg?t=st=1739366852~exp=1739370452~hmac=dac0f0e2a73646c23b9c4ad75b7b456c570a5173a0f85388ee029959e1b2db2f&w=1380",
-  ];
-  
-  const placeholderText = "Search for doctors...";
-  
+];
+
+const placeholderText = "Search for doctors...";
+
 function Home() {
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
             setIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 4000); 
+        }, 2000);
 
         return () => clearInterval(interval);
     }, []);
@@ -49,7 +46,7 @@ function Home() {
                     setCharIndex(0);
                 });
             }
-        }, 100); 
+        }, 100);
 
 
         return () => clearInterval(interval);
@@ -60,55 +57,55 @@ function Home() {
 
 
             <div className="w-full min-h-screen relative pt-16 bg-gray-200 flex flex-col text-center">
-      {/* Background Section */}
-      <div
-        style={{ backgroundImage: `url(${images[index]})` }}
-        className="flex flex-col bg-cover bg-center text-white w-full h-[400px] sm:h-[500px] md:h-[570px] items-center justify-center px-4"
-      >
-        <div className="flex flex-col items-center max-w-3xl">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: 'easeOut' }}
-            className="text-xl sm:text-2xl md:text-3xl font-extrabold px-4 py-2 rounded-lg"
-          >
-            TeleCare – Your Trusted Online Doctor
-          </motion.span>
+                {/* Background Section */}
+                <div
+                    style={{ backgroundImage: `url(${images[index]})` }}
+                    className="flex flex-col bg-cover bg-center text-white w-full h-[400px] sm:h-[500px] md:h-[570px] items-center justify-center px-4"
+                >
+                    <div className="flex flex-col items-center max-w-3xl">
+                        <motion.span
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, ease: 'easeOut' }}
+                            className="text-xl sm:text-2xl md:text-3xl font-extrabold px-4 py-2 rounded-lg"
+                        >
+                            TeleCare – Your Trusted Online Doctor
+                        </motion.span>
 
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
-            className="text-lg sm:text-xl md:text-3xl font-extrabold"
-          >
-            Consultation Platform for Instant Care & Expert Advice
-          </motion.span>
-          <br />
-          
-          {/* Search Input */}
-          <input
-            className="w-full sm:w-4/5 md:w-[600px] h-10 border border-white text-black font-black mt-4 px-3 focus:outline-none rounded-full"
-            type="search"
-            placeholder={displayText}
-          />
+                        <motion.span
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
+                            className="text-lg sm:text-xl md:text-3xl font-extrabold"
+                        >
+                            Consultation Platform for Instant Care & Expert Advice
+                        </motion.span>
+                        <br />
 
-          <span className="mt-5 text-xs sm:text-sm md:text-base font-serif">
-            Discover specialized medical insights from real patient questions
-          </span>
-          <span className="text-xs sm:text-sm md:text-base font-serif">
-            answered by expert physicians.
-          </span>
-          <div className="w-full sm:w-4/5 text-base sm:text-lg md:text-2xl mt-3">
-            <h1 className="text-center font-bold">
-              From little to life-altering issues, we've got you covered
-            </h1>
-          </div>
-        </div>
-      </div>
-      
-      {/* Slider Component */}
-      <Slider />
-    </div>
+                        {/* Search Input */}
+                        <input
+                            className="w-full sm:w-4/5 md:w-[600px] placeholder:text-black placeholder:italic h-10 border border-white bg-white text-black  mt-4 px-3 focus:outline-none rounded-full"
+                            type="search"
+                            placeholder={displayText}
+                        />
+
+                        <span className="mt-5 text-xs sm:text-sm md:text-base font-serif">
+                            Discover specialized medical insights from real patient questions
+                        </span>
+                        <span className="text-xs sm:text-sm md:text-base font-serif">
+                            answered by expert physicians.
+                        </span>
+                        <div className="w-full sm:w-4/5 text-base sm:text-lg md:text-2xl mt-3">
+                            <h1 className="text-center font-bold">
+                                From little to life-altering issues, we've got you covered
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+
+               
+                <Slider />
+            </div>
             <div className="w-full min-h-screen flex items-center justify-center flex-col bg-gray-200  px-8 py-12">
 
 
@@ -157,7 +154,7 @@ function Home() {
             </div>
 
             <div
-                // style={{ backgroundImage: `url(${ServiceImage})` }} 
+                
                 className="w-full min-h-screen  flex flex-col justify-center bg-gray-100 items-center px-4 sm:px-8 py-10">
                 <div className="text-center">
                     <span className="text-blue-400 text-lg md:text-2xl">
@@ -173,11 +170,11 @@ function Home() {
                         Get your first online doctor consultation
                     </p>
                 </div>
-                <div className="flex justify-center mt-5 text-base md:text-lg font-extrabold text-white">
+                <div className="flex justify-center mt-5 text-base md:text-lg font-extrabold ">
                     <p>Doctors and everyone’s the best</p>
                 </div>
                 <div style={{ backgroundImage: `url(${Banner})` }} className="w-full  bg-cover bg-center md:w-[80%] h-[200px] md:h-[300px] rounded-md bg-amber-900 mt-6 flex items-center pl-6 md:pl-10">
-                    <p className="text-sm md:text-lg font-extralight text-white">
+                    <p className="text-sm md:text-lg text-white font-extralight ">
                         <strong>4.6</strong> <br />
                         Average doctor rating <br />
                         <strong>1 hr</strong> <br />

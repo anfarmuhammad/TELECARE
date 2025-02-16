@@ -33,11 +33,11 @@ function NavBar() {
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center gap-10 font-bold">
-          <li className="hover:text-gray-300 cursor-pointer"><Link to="/">HOME</Link></li>
+          <li className="hover:text-gray-300 cursor-pointer"><Link to="/home">HOME</Link></li>
           <li className="hover:text-gray-300 cursor-pointer flex items-center gap-1">
             FIND DOCTORS
           </li>
-          <li className="hover:text-gray-300 cursor-pointer">APPOINMENT</li>
+          <li className="hover:text-gray-300 cursor-pointer"><Link to="/appointments">APPOINMENTS</Link></li>
           <li className="hover:text-gray-300 cursor-pointer"><Link to="/about">ABOUT</Link></li>
         </ul>
 
