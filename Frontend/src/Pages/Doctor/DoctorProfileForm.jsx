@@ -34,7 +34,7 @@ const DoctorProfileForm = () => {
         <div className="w-full bg-gray-200 h-auto flex flex-col gap-10">
             <DoctorNavbar />
             <div className=" w-full min-h-screen flex flex-col items-center pt-20 md:pt-20 justify-center ">
-                <div className="max-w-3xl mx-auto p-6  bg-white shadow-lg rounded-lg">
+                <div className="max-w-3xl mx-auto p-6 w-[650px]  bg-white shadow-lg rounded-lg">
                     <div className="bg-green-100 text-green-700 p-3 rounded mb-4 text-center">
                         Your email successfully verified.
                     </div>

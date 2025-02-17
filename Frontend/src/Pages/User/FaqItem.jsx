@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Plus, Minus } from "lucide-react"; // Install lucide-react if not installed
-
+import { Plus, Minus } from "lucide-react"; 
 const faqs = [
   {
     question: "TeleCare Safe?",

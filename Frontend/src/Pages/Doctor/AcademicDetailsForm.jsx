@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { FaUserMd, FaGraduationCap, FaUser } from "react-icons/fa";
 import DoctorNavbar from "../../componets/Doctorcomponets/DoctorNavbar";
-import { useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Footer from "../../componets/Usercomponets/Footer";
 
 export function AcademicDetailsForm() {
     const [languages, setLanguages] = useState("English");
     const [specialty, setSpecialty] = useState("");
     const [imcId, setImcId] = useState("");
     
-    const doctorprofile = useNavigation()
-    const doctorProfileNavi = () =>{
+    const doctorprofile = useNavigate()
+    const  profileNavigation = () =>{
         
         doctorprofile("/doctorprofileform")
     }
@@ -81,13 +82,13 @@ export function AcademicDetailsForm() {
                         <p className="text-sm font-bold">If you don’t have one, just enter NIL</p>
                     </div>
                     <div className="w-full  flex items-center justify-center">
-                        <button className="w-[250px] bg-green-600  text-white p-2 rounded hover:bg-green-700" onClick={doctorProfileNavi}>
+                        <button className="w-[250px] bg-green-600  text-white p-2 rounded hover:bg-green-700" onClick={profileNavigation}>
                             Submit & Continue
                         </button>
                     </div>
                 </div>
             </div>
-
+            <Footer/>
         </div>
     );
 }

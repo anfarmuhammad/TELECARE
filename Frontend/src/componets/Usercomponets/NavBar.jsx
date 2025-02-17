@@ -34,9 +34,7 @@ function NavBar() {
         {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center gap-10 font-bold">
           <li className="hover:text-gray-300 cursor-pointer"><Link to="/home">HOME</Link></li>
-          <li className="hover:text-gray-300 cursor-pointer flex items-center gap-1">
-            FIND DOCTORS
-          </li>
+          <li className="hover:text-gray-300 cursor-pointer flex items-center gap-1"><Link to="/finddoctors">FIND DOCTORS</Link></li>
           <li className="hover:text-gray-300 cursor-pointer"><Link to="/appointments">APPOINMENTS</Link></li>
           <li className="hover:text-gray-300 cursor-pointer"><Link to="/about">ABOUT</Link></li>
         </ul>
@@ -46,6 +44,7 @@ function NavBar() {
           <button className="bg-blue-600 px-4 py-1 rounded-full hover:bg-blue-500 transition">
             LOGOUT
           </button>
+          <div className="text-black text-xl"><Link to="/userprofile"><i class="fa-solid fa-user"></i></Link></div>
         </div>
 
         {/* Mobile Menu Button */}
