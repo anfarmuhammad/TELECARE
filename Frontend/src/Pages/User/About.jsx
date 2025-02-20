@@ -19,7 +19,7 @@ const specialties = [
 ];
 function About() {
     return (
-        <div className='w-full min-h-screen'>
+        <div className='w-full min-h-screen bg-gray-200'>
             <NavBar />
             <div className="w-full h-16 bg-blue-800 "></div>
             <div className="max-w-7xl mx-auto px-6 py-12">
@@ -78,28 +78,29 @@ function About() {
                 </section>
             </div>
 
-            <div className="p-6 ">
-                <h2 className="text-2xl font-bold text-center mb-6">Our Top Specialties</h2>
-                <div className="grid grid-cols-2 p-16 md:grid-cols-3 lg:grid-cols-4 gap-16">
+            <div className="p-4 md:p-6">
+                <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">
+                    Our Top Specialties
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10">
                     {specialties.map((specialty, index) => (
                         <div
                             key={index}
-                            className="relative rounded-xl overflow-hidden shadow-lg group"
+                            className="relative rounded-xl overflow-hidden shadow-lg group bg-white"
                         >
                             <img
                                 src={specialty.image}
                                 alt={specialty.title}
-                                className="w-full h-48 object-cover group-hover:scale-105 transition-transform"
+                                className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                             />
-                            <div >
-                                <span className=" font-semibold text-lg">
-                                    {specialty.title}
-                                </span>
+                            <div className="p-4 text-center">
+                                <span className="font-semibold text-lg">{specialty.title}</span>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
+
             <Footer />
 
         </div>

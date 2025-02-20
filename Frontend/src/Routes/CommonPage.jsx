@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Routes } from "react-router-dom";
 import Landing from '../Pages/Common/Landing'
 import Login from '../Pages/Common/Login';
-import SignUp from '../Pages/Common/SignUp';
+import SignUp from '../Pages/Common/Signup';
 
 
 function CommonPage() {

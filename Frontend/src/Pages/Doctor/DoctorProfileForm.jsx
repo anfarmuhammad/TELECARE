@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DoctorNavbar from "../../componets/Doctorcomponets/DoctorNavbar";
 import { FaUserMd, FaGraduationCap, FaUser } from "react-icons/fa";
 import Footer from "../../componets/Usercomponets/Footer";
+import { useNavigate } from "react-router-dom";
 
 const DoctorProfileForm = () => {
     const [formData, setFormData] = useState({
@@ -29,6 +30,11 @@ const DoctorProfileForm = () => {
         e.preventDefault();
         console.log("Form submitted", formData);
     };
+     
+    const doctorhome =useNavigate();
+    const doctorHomeNavigate = () =>{
+        doctorhome("/doctorhome");
+    }
 
     return (
         <div className="w-full bg-gray-200 h-auto flex flex-col gap-10">
@@ -108,7 +114,7 @@ const DoctorProfileForm = () => {
                             <input type="text" name="twitter" placeholder="Twitter Profile" value={formData.twitter} onChange={handleChange} className="p-2 border rounded" />
                         </div>
 
-                        <button type="submit" className="w-full bg-green-600 text-white py-2 rounded">Submit & Continue</button>
+                        <button type="submit" className="w-full bg-green-600 text-white py-2 rounded" onClick={doctorHomeNavigate}>Submit & Continue</button>
                     </form>
                 </div>
             </div>

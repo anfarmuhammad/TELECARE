@@ -1,11 +1,9 @@
 import React from "react";
-
-import SignUpImage from "/src/assets/Common/sginupimage.png"
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 
-function Signup() {
+function SignUp() {
   const navigate = useNavigate();
   const handleNavigate =()=>{
     navigate("/home")
@@ -18,7 +16,8 @@ function Signup() {
 
   return (
     <div>
-      <div style={{ backgroundImage: `url(${SignUpImage})` }} className="w-full min-h-screen  flex flex-col bg-cover  px-4">
+      <div  
+      className="w-full min-h-screen bg-gray-200 flex flex-col  px-4">
         <div className="w-full max-w-3xl flex  items-center text-3xl font-mono font-bold py-6">
           <motion.span
             initial={{ opacity: 0, y: -50 }}
@@ -36,40 +35,40 @@ function Signup() {
             Care
           </motion.span>
         </div>
-        <div className="flex  justify-center items-center  flex-col">
-          <div className="text-white mb-4 text-center">
+        <div className="flex  justify-center  items-center  flex-col">
+          <div className=" mb-4 text-center">
             <span className="text-2xl font-bold">Sign Up </span>
             <span>- New User</span>
           </div>
-          <div className="w-full pb-16  max-w-2xl backdrop-blur-md bg-opacity-8 rounded-lg flex flex-wrap justify-center p-6 shadow-lg">
+          <div className="w-full pb-16  max-w-2xl bg-white backdrop-blur-md bg-opacity-8 rounded-lg flex flex-wrap justify-center p-6 shadow-lg">
             <div className="w-full md:w-1/2 flex flex-col items-center justify-center gap-10 p-4">
 
               <input
-                className="w-full max-w-[300px] h-[40px] bg-white rounded-full outline-none p-4"
+                className="w-full max-w-[300px] h-[40px] bg-white rounded-md  border border-gray-600 outline-none  p-4"
                 type="text"
                 placeholder="Name"
               />
               <input
-                className="w-full max-w-[300px] h-[40px] bg-white rounded-full outline-none p-4"
+                className="w-full max-w-[300px] h-[40px] bg-white rounded-md border border-gray-600 outline-none p-4"
                 type="email"
                 placeholder="Email"
               />
               <input
-                className="w-full max-w-[300px] h-[40px] bg-white rounded-full outline-none p-4"
+                className="w-full max-w-[300px] h-[40px] bg-white rounded-md  border border-gray-600 outline-none p-4"
                 type="password"
                 placeholder="Password"
               />
               <input
-                className="w-full max-w-[300px] h-[40px] bg-white rounded-full outline-none p-4"
+                className="w-full max-w-[300px] h-[40px] bg-white rounded-md  border border-gray-600 outline-none p-4"
                 type="password"
                 placeholder="Confirm Password"
               />
               <input
-                className="w-full max-w-[300px] h-[40px] bg-white rounded-full outline-none p-4"
+                className="w-full max-w-[300px] h-[40px] bg-white rounded-md border border-gray-600 outline-none p-4"
                 type="tel"
                 placeholder="Mobile Number"
               />
-              <button className="w-[200px] h-[40px] bg-green-700 rounded-full text-white hover:bg-green-800 transition"  onClick={handleNavigate}>
+              <button className="w-[200px] h-[40px] bg-green-700 rounded-md text-white hover:bg-green-800 transition"  onClick={handleNavigate}>
                 SUBMIT
               </button>
             </div>
@@ -82,9 +81,9 @@ function Signup() {
                   <li>✅ Trusted by millions worldwide.</li>
                 </ul>
               </div>
-              <div className="bg-gray-800 p-4 rounded-md w-full max-w-xs text-center">
+              <div className=" bg-blue-900 p-4 rounded-md w-full max-w-xs text-center">
                 <p className="mb-2 text-sm text-white">Are You a Doctor?</p>
-                <button className="bg-white text-blue-900 px-4 py-2 rounded-md font-medium hover:bg-gray-300 transition-all" onClick={doctorNavigate}>
+                <button className="bg-green-700 hover:bg-green-800  text-white px-4 py-2 rounded-md font-medium  transition-all" onClick={doctorNavigate}>
                   SIGN UP HERE →
                 </button>
               </div>
@@ -99,4 +98,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default SignUp;

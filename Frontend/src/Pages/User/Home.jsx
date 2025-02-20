@@ -52,12 +52,11 @@ function Home() {
         return () => clearInterval(interval);
     }, [charIndex]);
     return (
-        <div className="w-full h-auto">
+        <div className="w-full min-h-screen bg-gray-200">
             <NavBar />
 
 
-            <div className="w-full min-h-screen relative pt-16 bg-gray-200 flex flex-col text-center">
-                {/* Background Section */}
+            <div className="w-full min-h-auto md:min-h-screen  relative pt-16 bg-gray-200 flex flex-col text-center">
                 <div
                     style={{ backgroundImage: `url(${images[index]})` }}
                     className="flex flex-col bg-cover bg-center text-white w-full h-[400px] sm:h-[500px] md:h-[570px] items-center justify-center px-4"
@@ -103,37 +102,38 @@ function Home() {
                     </div>
                 </div>
 
-               
+
                 <Slider />
             </div>
-            <div className="w-full min-h-screen flex items-center justify-center flex-col bg-gray-200  px-8 py-12">
+            <div className="w-full  md:mt-6   min-h-screen flex items-center justify-center flex-col bg-gray-200  px-8 py-12">
 
 
 
                 {/* Consultation Options */}
-                <div className="mt-12 flex items-center gap-10  justify-center flex-col text-center">
-                    <h2 className="text-lg font-semibold mb-6">Get your first online doctor consultation</h2>
+                <div className=" flex items-center  justify-center flex-col text-center">
+                    <h2 className="text-2xl font-extrabold mb-6 md:mb-10">Get Your First Online Doctor Consultation</h2>
                     <div className="flex flex-wrap text-white font-bold  justify-center max-w-full gap-5 md:gap-26 mx-auto">
-                        <div style={{ backgroundImage: `url(${Chat})` }} className="bg-gray-800 bg-cover  w-[300px] bg-center flex justify-center  flex-col h-[300px]  rounded-lg text-center">
+                        <div style={{ backgroundImage: `url(${Chat})` }} className="bg-gray-800 bg-cover w-[300px] bg-center flex justify-center flex-col h-[300px] rounded-lg text-center">
                             <div className="bg-black/50 flex items-center justify-center flex-col h-full w-full">
-                                <button><img src="https://assets.icliniq.com/modern-homepage/Chat-blue-icon.svg" alt="Chat Consultation" className="mx-auto w-[150px] opacity-75" /></button>
+                                <button className="rounded-xl overflow-hidden group "><img src="https://assets.icliniq.com/modern-homepage/Chat-blue-icon.svg" alt="Chat Consultation" className="mx-auto w-[150px] object-cover transition-transform duration-300 group-hover:scale-110 opacity-75" /></button>
                                 <p className="mt-2">Chat Consultation</p>
                             </div>
                         </div>
-                        <div style={{ backgroundImage: `url(${Phone})` }} className="bg-gray-800 bg-cover bg-center   w-[300px] h-[300px] rounded-lg text-center">
+                        <div style={{ backgroundImage: `url(${Phone})` }} className="bg-gray-800 bg-cover bg-center w-[300px] h-[300px] rounded-lg text-center">
                             <div className="bg-black/50 flex items-center justify-center flex-col h-full w-full">
-                                <button><img src="https://assets.icliniq.com/modern-homepage/phone-blue-icon.svg" alt="Phone Consultation" className="mx-auto  w-[150px] opacity-75" /></button>
+                                <button className="group"><img src="https://assets.icliniq.com/modern-homepage/phone-blue-icon.svg" alt="Phone Consultation" className="mx-auto w-[150px] opacity-75 transition-transform duration-300 group-hover:rotate-12" /></button>
                                 <p className="mt-2">Phone Consultation</p>
                             </div>
                         </div>
-                        <div style={{ backgroundImage: `url(${Video})` }} className="bg-gray-800 bg-cover bg-center  w-[300px] h-[300px]  rounded-lg text-center">
+                        <div style={{ backgroundImage: `url(${Video})` }} className="bg-gray-800 bg-cover bg-center w-[300px] h-[300px] rounded-lg text-center">
                             <div className="bg-black/50 flex items-center justify-center flex-col h-full w-full">
-                                <button><img src="https://assets.icliniq.com/modern-homepage/video-blue-icon.svg" alt="Video Consultation" className="mx-auto w-[150px] opacity-75" /></button>
+                                <button className="group"><img src="https://assets.icliniq.com/modern-homepage/video-blue-icon.svg" alt="Video Consultation" className="mx-auto w-[150px] opacity-75 transition-transform duration-300 group-hover:animate-bounce" /></button>
                                 <p className="mt-2">Video Consultation</p>
                             </div>
                         </div>
+
                     </div>
-                    <p className="mt-6 ">Text, Video Call or Phone a doctor anytime, anywhere</p>
+                    <p className="mt-6 font-bold ">Text, Video Call or Phone a doctor anytime, anywhere</p>
                 </div>
                 <div
                     style={{ backgroundImage: `url(${Family})` }}
@@ -153,41 +153,46 @@ function Home() {
 
             </div>
 
-            <div
-                
-                className="w-full min-h-screen  flex flex-col justify-center bg-gray-100 items-center px-4 sm:px-8 py-10">
+            <div className="w-full min-h-screen flex flex-col justify-center bg-gray-200 items-center px-4 sm:px-8">
                 <div className="text-center">
-                    <span className="text-blue-400 text-lg md:text-2xl">
-                        Text, Video Call or Phone
-                    </span>
-                    <span className=" text-lg md:text-2xl block">
-                        a doctor anytime, anywhere
-                    </span>
-                    <div className="flex flex-col md:flex-row gap-4 md:gap-10 mt-5 justify-center items-center">
-
-                    </div>
-                    <p className=" font-light mt-3 text-sm md:text-base">
-                        Get your first online doctor consultation
-                    </p>
+                    <span className="text-blue-400 text-lg md:text-2xl">Text, Video Call or Phone</span>
+                    <span className="text-lg md:text-2xl block">a doctor anytime, anywhere</span>
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-10 mt-5 justify-center items-center"></div>
+                    <p className="font-light mt-3 text-sm md:text-base">Get your first online doctor consultation</p>
                 </div>
-                <div className="flex justify-center mt-5 text-base md:text-lg font-extrabold ">
+
+                <div className="flex justify-center mt-5 text-base md:text-lg font-extrabold">
                     <p>Doctors and everyone’s the best</p>
                 </div>
-                <div style={{ backgroundImage: `url(${Banner})` }} className="w-full  bg-cover bg-center md:w-[80%] h-[200px] md:h-[300px] rounded-md bg-amber-900 mt-6 flex items-center pl-6 md:pl-10">
-                    <p className="text-sm md:text-lg text-white font-extralight ">
+
+                <div
+                    style={{ backgroundImage: `url(${Banner})` }}
+                    className="w-full bg-cover bg-center md:w-[80%] h-[200px] md:h-[300px] rounded-md bg-amber-900 mt-6 flex items-center pl-6 md:pl-10"
+                >
+                    <p className="text-sm md:text-lg text-white font-extralight">
                         <strong>4.6</strong> <br />
                         Average doctor rating <br />
                         <strong>1 hr</strong> <br />
                         Average turnaround time
                     </p>
                 </div>
-                <div className="flex flex-col md:flex-row items-center md:justify-between gap-4 md:gap-10 px-4 py-2 ">
+                <div className="flex flex-col md:flex-row items-center md:justify-between gap-4 md:gap-10 px-4 py-2">
                     <p className="text-sm md:text-base lg:text-lg text-center md:text-left">
                         TeleCare upholds the highest standards when onboarding physicians. Every physician at TeleCare is highly qualified.
                     </p>
                     <button className="w-full md:w-[150px] h-[40px] bg-blue-500 rounded-full text-white text-sm md:text-base">
                         Choose a Doctor
                     </button>
+                </div>
+                <div className="w-full md:w-[80%] mt-  p-5 md:p-8">
+                    <h2 className="text-lg md:text-2xl font-bold text-center md:text-left ">What Our Patients Say</h2>
+                    <div className="mt-5 space-y-4">
+                        <p className="text-sm md:text-base italic ">"Excellent experience! The doctor listened carefully and provided great advice." </p>
+                        <p className="text-sm md:text-base italic ">"Very convenient and professional service. Highly recommend!" </p>
+                    </div>
+                </div>
+                <div className="fixed bottom-5 left-5 bg-blue-500 text-white px-4 py-2 rounded-full shadow-lg">
+                    💬 Chat with a Health Assistant
                 </div>
             </div>
             <div className="w-full min-h-screen bg-gray-300 flex flex-col items-center pt-16 px-4 sm:px-8 md:px-16">
