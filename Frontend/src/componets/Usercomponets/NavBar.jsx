@@ -41,6 +41,7 @@ function NavBar() {
           <li className="hover:text-gray-300 cursor-pointer flex items-center gap-1"><Link to="/finddoctors">FIND DOCTORS</Link></li>
           <li className="hover:text-gray-300 cursor-pointer"><Link to="/appointments">APPOINMENTS</Link></li>
           <li className="hover:text-gray-300 cursor-pointer"><Link to="/about">ABOUT</Link></li>
+         
         </ul>
 
         
