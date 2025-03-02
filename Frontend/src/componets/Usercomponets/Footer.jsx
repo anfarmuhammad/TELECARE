@@ -1,8 +1,14 @@
 import React from "react";
 import Logo from "/src/assets/user/logo.png";
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
-const Footer = () => {
+function Footer() {
+  const feedback = useNavigate()
+  const feedbackNavigate = () => {
+    feedback("/feedback")
+
+  }
   return (
     <footer className="bg-blue-800 text-white py-10">
       <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center md:items-start">
@@ -20,7 +26,7 @@ const Footer = () => {
           <h3 className="font-bold text-lg mb-2">Company</h3>
           <ul className="space-y-2">
             <li className="cursor-pointer hover:text-gray-300">About us</li>
-            <li className="cursor-pointer hover:text-gray-300">Our Medical Review Team</li>
+            <li className="cursor-pointer hover:text-gray-300" onClick={feedbackNavigate}>Feedback</li>
             <li className="cursor-pointer hover:text-gray-300">Blogs</li>
             <li className="cursor-pointer hover:text-gray-300">Careers</li>
             <li className="cursor-pointer hover:text-gray-300">Press</li>

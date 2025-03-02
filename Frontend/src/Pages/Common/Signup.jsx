@@ -56,7 +56,7 @@ function SignUp() {
 
   return (
     <div>
-      <div className="w-full min-h-screen bg-gray-900 flex flex-col px-4 text-white">
+      <div className="w-full min-h-screen bg-gray-200 flex flex-col px-4 ">
         <div className="w-full max-w-3xl flex items-center text-3xl font-mono font-bold py-6">
           <motion.span
             initial={{ opacity: 0, y: -50 }}
@@ -79,10 +79,10 @@ function SignUp() {
             <span className="text-2xl font-bold">Sign Up </span>
             <span>- New User</span>
           </div>
-          <div className="w-full pb-16 max-w-2xl bg-gray-800 rounded-lg flex flex-wrap justify-center p-6 shadow-lg">
+          <div className="w-full pb-16 max-w-2xl bg-white rounded-lg flex flex-wrap justify-center p-6 shadow-lg">
             <div className="w-full md:w-1/2 flex flex-col items-center justify-center gap-6 p-4">
               <input
-                className="w-full max-w-[300px] h-[40px] bg-gray-700 rounded-md border border-gray-600 outline-none p-4 text-white"
+                className="w-full max-w-[300px] h-[40px] bg-white rounded-md border border-gray-600 outline-none p-4 "
                 type="text"
                 placeholder="Name"
                 name="name"
@@ -92,7 +92,7 @@ function SignUp() {
               {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
               
               <input
-                className="w-full max-w-[300px] h-[40px] bg-gray-700 rounded-md border border-gray-600 outline-none p-4 text-white"
+                className="w-full max-w-[300px] h-[40px] bg-white rounded-md border  outline-none p-4 "
                 type="email"
                 placeholder="Email"
                 name="email"
@@ -102,7 +102,7 @@ function SignUp() {
               {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
               
               <input
-                className="w-full max-w-[300px] h-[40px] bg-gray-700 rounded-md border border-gray-600 outline-none p-4 text-white"
+                className="w-full max-w-[300px] h-[40px] bg-white rounded-md border outline-none p-4 "
                 type="password"
                 placeholder="Password"
                 name="password"
@@ -112,7 +112,7 @@ function SignUp() {
               {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
               
               <input
-                className="w-full max-w-[300px] h-[40px] bg-gray-700 rounded-md border border-gray-600 outline-none p-4 text-white"
+                className="w-full max-w-[300px] h-[40px] bg-white rounded-md border  outline-none p-4 "
                 type="password"
                 placeholder="Confirm Password"
                 name="confirmPassword"
@@ -122,7 +122,7 @@ function SignUp() {
               {errors.confirmPassword && <p className="text-red-500 text-sm">{errors.confirmPassword}</p>}
               
               <input
-                className="w-full max-w-[300px] h-[40px] bg-gray-700 rounded-md border border-gray-600 outline-none p-4 text-white"
+                className="w-full max-w-[300px] h-[40px] bg-white rounded-md border  outline-none p-4 e"
                 type="tel"
                 placeholder="Mobile Number"
                 name="mobile"
@@ -132,7 +132,7 @@ function SignUp() {
               {errors.mobile && <p className="text-red-500 text-sm">{errors.mobile}</p>}
               
               <button 
-                className="w-[200px] h-[40px] bg-green-700 rounded-md text-white hover:bg-green-800 transition"
+                className="w-[200px] h-[40px] bg-blue-500 rounded-md text-white hover:bg-blue-800 transition"
                 onClick={handleSubmit}
               >
                 SUBMIT
@@ -150,7 +150,7 @@ function SignUp() {
               <div className="bg-blue-900 p-4 rounded-md w-full max-w-xs text-center">
                 <p className="mb-2 text-sm text-white">Are You a Doctor?</p>
                 <button 
-                  className="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-md font-medium transition-all"
+                  className="bg-blue-500 hover:bg-blue-800 text-white px-4 py-2 rounded-md font-medium transition-all"
                   onClick={doctorNavigate}
                 >
                   SIGN UP HERE →

@@ -113,24 +113,36 @@ function Home() {
                 <div className=" flex items-center  justify-center flex-col text-center">
                     <h2 className="text-2xl font-extrabold mb-6 md:mb-10">Get Your First Online Doctor Consultation</h2>
                     <div className="flex flex-wrap text-white font-bold  justify-center max-w-full gap-5 md:gap-26 mx-auto">
-                        <div style={{ backgroundImage: `url(${Chat})` }} className="bg-gray-800 bg-cover w-[300px] bg-center flex justify-center flex-col h-[300px] rounded-lg text-center">
-                            <div className="bg-black/50 flex items-center justify-center flex-col h-full w-full">
-                                <button className="rounded-xl overflow-hidden group "><img src="https://assets.icliniq.com/modern-homepage/Chat-blue-icon.svg" alt="Chat Consultation" className="mx-auto w-[150px] object-cover transition-transform duration-300 group-hover:scale-110 opacity-75" /></button>
+                        <motion.div
+                            whileHover={{ scale: 1.04 }}
+                            whileTap={{ scale: 0.98 }}
+                            style={{ backgroundImage: `url(${Chat})` }} className="bg-gray-800 bg-cover w-[300px] bg-center flex justify-center flex-col h-[300px] rounded-lg text-center">
+                            <motion.div className="bg-black/50 flex items-center justify-center flex-col h-full w-full">
+                                <motion.button
+                                    whileHover={{ scale: 1.08 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="rounded-xl overflow-hidden group "><img src="https://assets.icliniq.com/modern-homepage/Chat-blue-icon.svg" alt="Chat Consultation" className="mx-auto w-[150px] object-cover  opacity-75" /></motion.button>
                                 <p className="mt-2">Chat Consultation</p>
-                            </div>
-                        </div>
-                        <div style={{ backgroundImage: `url(${Phone})` }} className="bg-gray-800 bg-cover bg-center w-[300px] h-[300px] rounded-lg text-center">
+                            </motion.div>
+                        </motion.div>
+                        <motion.div
+                            whileHover={{ scale: 1.04 }}
+                            whileTap={{ scale: 0.98 }}
+                            style={{ backgroundImage: `url(${Phone})` }} className="bg-gray-800 bg-cover bg-center w-[300px] h-[300px] rounded-lg text-center">
                             <div className="bg-black/50 flex items-center justify-center flex-col h-full w-full">
-                                <button className="group"><img src="https://assets.icliniq.com/modern-homepage/phone-blue-icon.svg" alt="Phone Consultation" className="mx-auto w-[150px] opacity-75 transition-transform duration-300 group-hover:rotate-12" /></button>
+                                <button className="group"><img src="https://assets.icliniq.com/modern-homepage/phone-blue-icon.svg" alt="Phone Consultation" className="mx-auto w-[150px] opacity-75 " /></button>
                                 <p className="mt-2">Phone Consultation</p>
                             </div>
-                        </div>
-                        <div style={{ backgroundImage: `url(${Video})` }} className="bg-gray-800 bg-cover bg-center w-[300px] h-[300px] rounded-lg text-center">
+                        </motion.div>
+                        <motion.div
+                            whileHover={{ scale: 1.04 }}
+                            whileTap={{ scale: 0.98 }}
+                            style={{ backgroundImage: `url(${Video})` }} className="bg-gray-800 bg-cover bg-center w-[300px] h-[300px] rounded-lg text-center">
                             <div className="bg-black/50 flex items-center justify-center flex-col h-full w-full">
-                                <button className="group"><img src="https://assets.icliniq.com/modern-homepage/video-blue-icon.svg" alt="Video Consultation" className="mx-auto w-[150px] opacity-75 transition-transform duration-300 group-hover:animate-bounce" /></button>
+                                <button className="group"><img src="https://assets.icliniq.com/modern-homepage/video-blue-icon.svg" alt="Video Consultation" className="mx-auto w-[150px] opacity-75 " /></button>
                                 <p className="mt-2">Video Consultation</p>
                             </div>
-                        </div>
+                        </motion.div>
 
                     </div>
                     <p className="mt-6 font-bold ">Text, Video Call or Phone a doctor anytime, anywhere</p>
@@ -199,24 +211,6 @@ function Home() {
                 <div className="text-center">
                     <span className="text-[20px] font-semibold">Have doubts? </span>
                     <span className="text-[20px] text-blue-600 font-semibold">FAQs</span>
-                </div>
-                <div className="flex flex-wrap justify-center gap-3 mt-6">
-                    {[
-                        "TeleCare",
-                        "Content",
-                        "Telemedicine",
-                        "Online Doctor",
-                        "Query",
-                        "Chat",
-                        "Video/Phone Consultation",
-                    ].map((item, index) => (
-                        <button
-                            key={index}
-                            className="bg-white px-4 py-2 rounded-full text-blue-600 text-sm sm:text-base shadow-md hover:bg-blue-100 transition"
-                        >
-                            {item}
-                        </button>
-                    ))}
                 </div>
                 <div className="w-full md:w-[80%] mt-6">
                     <FaqItem />

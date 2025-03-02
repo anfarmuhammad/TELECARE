@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NavBar from "../../componets/Usercomponets/NavBar";
+import Footer from "../../componets/Usercomponets/Footer";
 
 const Feedback = () => {
     const [feedback, setFeedback] = useState("");
@@ -18,7 +19,7 @@ const Feedback = () => {
     return (
         <div className='w-full min-h-screen bg-gray-200'>
             <NavBar/>
-            <div className="min-h-screen w-full bg-gray-200 flex flex-col items-center justify-center p-6">
+            <div className="min-h-screen w-full bg-gray-200 flex flex-col items-center justify-center pt-16 p-6">
                 <div className="w-[90%] h-[250px]  bg-white p-6 rounded-lg shadow-lg">
                     <h2 className="text-white text-xl font-bold mb-2">Feedback</h2>
                     <textarea
@@ -50,6 +51,7 @@ const Feedback = () => {
                     </button>
                 </div>
             </div>
+            <Footer/>
         </div>
 
     );

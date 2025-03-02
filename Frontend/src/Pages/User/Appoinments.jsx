@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "../../componets/Usercomponets/NavBar";
 import Footer from "../../componets/Usercomponets/Footer";
 
+
 function Appointments() {
     const appointments = [
         {
@@ -21,6 +22,7 @@ function Appointments() {
             fee: "₹500",
         },
     ];
+   
 
     return (
         <div className="w-full min-h-screen">
