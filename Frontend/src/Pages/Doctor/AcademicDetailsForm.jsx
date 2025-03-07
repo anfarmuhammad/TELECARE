@@ -1,94 +1,77 @@
 import { useState } from "react";
 import { FaUserMd, FaGraduationCap, FaUser } from "react-icons/fa";
-import DoctorNavbar from "../../componets/Doctorcomponets/DoctorNavbar";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import DoctorNavbar from "../../componets/Doctorcomponets/DoctorNavbar";
 import Footer from "../../componets/Usercomponets/Footer";
 
 export function AcademicDetailsForm() {
-    const [languages, setLanguages] = useState("English");
-    const [specialty, setSpecialty] = useState("");
-    const [imcId, setImcId] = useState("");
+    const navigate = useNavigate();
     
-    const doctorprofile = useNavigate()
-    const  profileNavigation = () =>{
-        
-        doctorprofile("/doctorprofileform")
-    }
-    
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        defaultValues: {
+            languages: "English",
+            specialty: "",
+            imcId: ""
+        }
+    });
+
+    const onSubmit = (data) => {
+        console.log("Form Submitted", data);
+        navigate("/doctorprofileform");
+    };
+
     return (
-        <div className="w-full h-auto">
+        <div className="w-full bg-gray-200 h-auto flex flex-col gap-10">
             <DoctorNavbar />
             <div className="bg-gray-200 w-full min-h-screen flex flex-col items-center justify-center  ">
-                <div className=" p-6 mt-16 bg-white  max-w-[650px] md:h-[650px] shadow-lg rounded-lg">
-
-                    <div className="bg-green-100 text-green-700 p-3  rounded mb-4 text-center">
+                <div className=" p-6 mt-24 bg-white  max-w-[650px] md:w-[650px] md:h-auto shadow-lg rounded-lg">
+                    <div className="bg-green-100 text-green-700 p-3 rounded mb-4 text-center">
                         Your email successfully verified.
                     </div>
                     <h2 className="text-xl font-black mb-4">Academic Details</h2>
-                    <div className="flex justify-center items-center mb-6">
-                        <div className="flex items-center">
-                            <FaUserMd className="text-black text-5xl border-2 border-black rounded-full p-1" />
-                            <div className="w-16 h-1 bg-gray-300"></div>
+                    <div className="flex md:flex-row justify-center items-center gap-4 md:gap-6 mb-6">
+                        <FaUserMd className="text-black text-5xl md:text-7xl border-2 border-black rounded-full p-1" />
+                        <div className="w-10 md:w-16 h-0.5 bg-gray-300"></div>
+                        <FaGraduationCap className="text-black text-4xl md:text-6xl border-2 border-black rounded-full p-1" />
+                        <div className="w-10 md:w-16 h-0.5 bg-gray-300"></div>
+                        <FaUser className="text-black text-4xl md:text-6xl border-2 border-black rounded-full p-1" />
+                    </div>
+                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                        <div className="mb-4">
+                            <label className="block font-bold">Languages</label>
+                            <select {...register("languages", { required: "Language is required" })} className="w-full p-2 border rounded mt-1">
+                                <option>English</option>
+                                <option>Spanish</option>
+                                <option>French</option>
+                            </select>
+                            <p className="text-red-500 text-xs">{errors.languages?.message}</p>
                         </div>
-                        <div className="flex items-center">
-                            <FaGraduationCap className="text-black text-6xl border-2 border-black rounded-full p-1" />
-                            <div className="w-16 h-1 bg-gray-300"></div>
+                        <div className="mb-4">
+                            <label className="block font-bold">Specialties</label>
+                            <select {...register("specialty", { required: "Specialty is required" })} className="w-full p-2 border rounded mt-1">
+                                <option value="">Click to choose your specialties</option>
+                                <option>Cardiology</option>
+                                <option>Neurology</option>
+                                <option>Dermatology</option>
+                            </select>
+                            <p className="text-red-500 text-xs">{errors.specialty?.message}</p>
                         </div>
-                        <div>
-                            <FaUser className="text-gray-400 text-5xl border-2 border-gray-400 rounded-full p-1" />
+                        <div className="mb-4">
+                            <label className="block font-bold">IMC ID</label>
+                            <input type="text" {...register("imcId", { required: "IMC ID is required" })} className="w-full p-2 border rounded mt-1" placeholder="Fill your IMC ID" />
+                            <p className="text-red-500 text-xs">{errors.imcId?.message}</p>
+                            <p className="text-sm font-bold">If you don’t have one, just enter NIL</p>
                         </div>
-                    </div>
-
-                    <h2 className="text-xl font-bold ">Education Profile</h2>
-                    <button className="bg-green-600 text-white px-4 py-2 rounded mb-4">+ Add</button>
-                    <p className="text-sm  mb-2">
-                        Note: If you have trouble uploading your certificates, please email us at
-                        <a href="mailto:telecare@telecare.com" className="text-blue-600"> tecare@telecare.com</a>
-                    </p>
-                    <div className="mb-4">
-                        <label className="block font-bold">Languages</label>
-                        <select
-                            className="w-full p-2 border rounded mt-1"
-                            value={languages}
-                            onChange={(e) => setLanguages(e.target.value)}
-                        >
-                            <option>English</option>
-                            <option>Spanish</option>
-                            <option>French</option>
-                        </select>
-                    </div>
-                    <div className="mb-4">
-                        <label className="block font-bold">Specialties</label>
-                        <select
-                            className="w-full p-2 border rounded mt-1"
-                            value={specialty}
-                            onChange={(e) => setSpecialty(e.target.value)}
-                        >
-                            <option value="">Click to choose your specialties</option>
-                            <option>Cardiology</option>
-                            <option>Neurology</option>
-                            <option>Dermatology</option>
-                        </select>
-                    </div>
-                    <div className="mb-4">
-                        <label className="block font-bold">IMC ID</label>
-                        <input
-                            type="text"
-                            className="w-full p-2 border rounded mt-1"
-                            placeholder="Fill your IMC ID"
-                            value={imcId}
-                            onChange={(e) => setImcId(e.target.value)}
-                        />
-                        <p className="text-sm font-bold">If you don’t have one, just enter NIL</p>
-                    </div>
-                    <div className="w-full  flex items-center justify-center">
-                        <button className="w-[250px] bg-green-600  text-white p-2 rounded hover:bg-green-700" onClick={profileNavigation}>
-                            Submit & Continue
-                        </button>
-                    </div>
+                        <div className="w-full flex items-center justify-center">
+                            <button type="submit" className="w-[250px] bg-blue-600 text-white p-2 rounded hover:bg-blue-700">
+                                Submit & Continue
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </div>
     );
 }

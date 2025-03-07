@@ -2,6 +2,7 @@ import { FaCalendarAlt, FaEnvelope } from 'react-icons/fa';
 import { MdEventNote } from 'react-icons/md';
 import Doctor from "/src/assets/Doctor/doctor.png"
 import DoctorNavbar from '../../componets/Doctorcomponets/DoctorNavbar';
+import { useNavigate } from 'react-router-dom';
 
 
 const patients = [
@@ -12,6 +13,18 @@ const patients = [
 
 
 export function DoctorHome() {
+    const navigate = useNavigate();
+    const appoinmentNavigate = () =>{
+        navigate("/doctorappoinments")
+    }
+    const todayappoinment = useNavigate();
+    const todayappoinmentNavigate = () =>{
+        todayappoinment("/doctortodayconsulation")
+    }
+    const doctormessages = useNavigate();
+    const doctormessagesNavigate = () =>{
+        doctormessages("/doctormessages")
+    }
     return (
         <div className="min-h-screen bg-gray-200">
 
@@ -29,15 +42,15 @@ export function DoctorHome() {
                 <div className="space-y-4  w-full">
                     <button className="flex items-center gap-3 bg-white p-4 w-full rounded-lg shadow-md">
                         <FaCalendarAlt className="text-xl" />
-                        <span className="font-semibold">Appointments</span>
+                        <span className="font-semibold" onClick={appoinmentNavigate}>Appointments</span>
                     </button>
                     <button className="flex items-center gap-3 bg-white p-4 w-full rounded-lg shadow-md">
                         <MdEventNote className="text-xl" />
-                        <span className="font-semibold">Today's Consultations</span>
+                        <span className="font-semibold" onClick={todayappoinmentNavigate}>Today's Consultations</span>
                     </button>
                     <button className="flex items-center gap-3 bg-white p-4 w-full rounded-lg shadow-md">
                         <FaEnvelope className="text-xl" />
-                        <span className="font-semibold">Messages</span>
+                        <span className="font-semibold" onClick={doctormessagesNavigate}>Messages</span>
                     </button>
                 </div>
             </div>

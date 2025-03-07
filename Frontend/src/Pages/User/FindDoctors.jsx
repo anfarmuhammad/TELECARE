@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "../../componets/Usercomponets/NavBar";
 import Footer from "../../componets/Usercomponets/Footer";
-import FindDoctor  from "/src/assets/User/finddoctor.png"
+import FindDoctor from "/src/assets/User/finddoctor.png"
 import { motion } from "framer-motion";
 import { User, BookOpen, Star, Globe, MessageCircle, Video, Phone, MessageSquare } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
@@ -69,10 +69,10 @@ const doctors = [
 function FindDoctors() {
 
   const navigate = useNavigate()
-  const consultNavigate =()=>{
+  const consultNavigate = () => {
     navigate("/consultationform")
   }
-  
+
 
   return (
     <div className="w-full bg-gray-200 flex flex-col  min-h-screen">
@@ -148,76 +148,92 @@ function FindDoctors() {
           ></motion.div>
         </div>
 
-        <div className='bg-gray-200 text-black '>
-          <div className='  text-black p-6 rounded-lg'>
-            <h1 className='text-3xl font-bold mb-2'>Doctors</h1>
-            <p className='text-sm text-black mb-4'>
-              Find one of the best Doctors to get instant medical advice and second opinion for your health problems.
+        <div className="bg-gray-200 text-black p-4">
+          <div className="text-black p-6 rounded-lg">
+            <h1 className="text-2xl md:text-3xl font-bold mb-2">Doctors</h1>
+            <p className="text-sm md:text-base text-black mb-4">
+              Find one of the best Doctors to get instant medical advice and second opinions for your health problems.
               Ask doctors online and consult them through video, phone, or chat. Get started now!
             </p>
 
             {doctors.map((doctor, index) => (
-              <div key={index} className='bg-white flex justify-between rounded-lg p-4 mb-4 shadow-sm text-black'>
-                <div>
-                  <h2 className='text-lg font-bold text-blue-700 hover:underline cursor-pointer flex items-center gap-2'>
-                    <img className="w-[60px]" src="https://assets.icliniq.com/v2/assets/gender-icons/male.jpg" alt="" />
+              <div
+                key={index}
+                className="bg-white flex flex-col md:flex-row justify-between rounded-lg p-4 mb-4 shadow-sm text-black"
+              >
+                <div className="flex flex-col">
+                  <h2 className="text-lg font-bold text-blue-700 hover:underline cursor-pointer flex items-center gap-2">
+                    <img className="w-[50px] md:w-[60px]" src="https://assets.icliniq.com/v2/assets/gender-icons/male.jpg" alt="" />
                     {doctor.name}
                   </h2>
-                  <p className='flex items-center gap-2'>
-                    <BookOpen className='w-4 h-4 text-gray-600' />
+                  <p className="flex items-center gap-2 text-sm md:text-base">
+                    <BookOpen className="w-4 h-4 text-gray-600" />
                     {doctor.qualification}
                   </p>
-                  <p className='flex items-center gap-2'>
-                    <User className='w-4 h-4 text-gray-600' />
+                  <p className="flex items-center gap-2 text-sm md:text-base">
+                    <User className="w-4 h-4 text-gray-600" />
                     Experience: {doctor.experience}
                   </p>
-                  <p className='flex items-center gap-2'>
-                    <Star className='w-4 h-4 text-yellow-500' />
+                  <p className="flex items-center gap-2 text-sm md:text-base">
+                    <Star className="w-4 h-4 text-yellow-500" />
                     Rating: {'⭐'.repeat(doctor.rating)} ({doctor.reviews} ratings)
                   </p>
-                  <div className='flex gap-2 my-2 items-center'>
-                    <Globe className='w-4 h-4 text-gray-600' />
+                  <div className="flex gap-2 my-2 flex-wrap items-center">
+                    <Globe className="w-4 h-4 text-gray-600" />
                     {doctor.specialties.map((specialty, i) => (
                       <span
                         key={i}
-                        className='bg-blue-100 text-blue-700 text-xs rounded-full px-2 py-1 border border-blue-300'
+                        className="bg-blue-100 text-blue-700 text-xs rounded-full px-2 py-1 border border-blue-300"
                       >
                         {specialty}
                       </span>
                     ))}
                   </div>
-                  <p className='flex items-center gap-2'>
-                    <Globe className='w-4 h-4 text-gray-600' />
+                  <p className="flex items-center gap-2 text-sm md:text-base">
+                    <Globe className="w-4 h-4 text-gray-600" />
                     Consulting Languages: {doctor.languages.join(', ')}
                   </p>
                 </div>
-                <div className='flex flex-col gap-2 mt-2'>
-                  <button className='bg-gray-100 hover:bg-gray-300 p-2 text-black text-sm flex items-center justify-between w-full' onClick={consultNavigate} >
-                    <MessageCircle className='w-4 h-4 text-blue-600' />
+
+                <div className="flex flex-col gap-2 mt-4 md:mt-0 md:ml-4 w-full md:w-auto">
+                  <button
+                    className="bg-gray-100 hover:bg-gray-300 p-2 text-black text-sm flex items-center justify-between w-full md:w-48"
+                    onClick={consultNavigate}
+                  >
+                    <MessageCircle className="w-4 h-4 text-blue-600" />
                     Ask a Query Rs.{doctor.pricing.query}
                   </button>
-                  <button className='bg-gray-100 hover:bg-gray-300  p-2 text-black  text-sm flex items-center justify-between w-full' onClick={consultNavigate}>
-                    <MessageSquare className='w-4 h-4 text-green-600' />
+                  <button
+                    className="bg-gray-100 hover:bg-gray-300 p-2 text-black text-sm flex items-center justify-between w-full md:w-48"
+                    onClick={consultNavigate}
+                  >
+                    <MessageSquare className="w-4 h-4 text-green-600" />
                     50 hrs Chat Rs.{doctor.pricing.chat}
                   </button>
                   {doctor.pricing.call && (
-                    <button className='bg-gray-100 hover:bg-gray-300  p-2 text-black  text-sm flex items-center justify-between w-full' onClick={consultNavigate}>
-                      <Video className='w-4 h-4 text-red-600' />
-                      Video Call Rs.{doctor.pricing.call}
-                    </button>
+                    <>
+                      <button
+                        className="bg-gray-100 hover:bg-gray-300 p-2 text-black text-sm flex items-center justify-between w-full md:w-48"
+                        onClick={consultNavigate}
+                      >
+                        <Video className="w-4 h-4 text-red-600" />
+                        Video Call Rs.{doctor.pricing.call}
+                      </button>
+                      <button
+                        className="bg-gray-100 hover:bg-gray-300 p-2 text-black text-sm flex items-center justify-between w-full md:w-48"
+                        onClick={consultNavigate}
+                      >
+                        <Phone className="w-4 h-4 text-purple-600" />
+                        Phone Call Rs.{doctor.pricing.call}
+                      </button>
+                    </>
                   )}
-                  {doctor.pricing.call && (
-                    <button className='bg-gray-100 hover:bg-gray-300  p-2 text-black  text-sm flex items-center justify-between w-full' onClick={consultNavigate}>
-                      <Phone className='w-4 h-4 text-purple-600' />
-                      Phone Call Rs.{doctor.pricing.call}
-                    </button>
-                  )}
-
                 </div>
               </div>
             ))}
           </div>
         </div>
+
       </div>
       <Footer />
     </div>

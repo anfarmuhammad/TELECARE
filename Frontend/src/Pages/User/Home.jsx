@@ -11,6 +11,7 @@ import ForDoctor from "/src/assets/User/fordoctor.png"
 import { motion } from "framer-motion";
 import NavBar from "../../componets/Usercomponets/NavBar";
 import Footer from "../../componets/Usercomponets/Footer";
+import { useNavigate } from "react-router-dom";
 
 
 const images = [
@@ -51,6 +52,15 @@ function Home() {
 
         return () => clearInterval(interval);
     }, [charIndex]);
+
+    const navigate = useNavigate();
+     const doctorNavigate =()=>{
+        navigate("/finddoctors")
+    }
+    const joinNavigate = useNavigate();
+     const doctorjoinNavigate =()=>{
+        navigate("/doctorsignup")
+    }
     return (
         <div className="w-full min-h-screen bg-gray-200">
             <NavBar />
@@ -192,7 +202,7 @@ function Home() {
                     <p className="text-sm md:text-base lg:text-lg text-center md:text-left">
                         TeleCare upholds the highest standards when onboarding physicians. Every physician at TeleCare is highly qualified.
                     </p>
-                    <button className="w-full md:w-[150px] h-[40px] bg-blue-500 rounded-full text-white text-sm md:text-base">
+                    <button className="w-full md:w-[150px] h-[40px] bg-blue-500 rounded-full text-white text-sm md:text-base"onClick={doctorNavigate}>
                         Choose a Doctor
                     </button>
                 </div>
@@ -223,7 +233,7 @@ function Home() {
                             Join our medical panel of doctors and be a part of the already big thing in healthcare.
                         </p>
                     </div>
-                    <button className="w-40 py-2 bg-blue-500 text-white rounded-full mt-4 md:mt-0 shadow-md hover:bg-blue-600 transition">
+                    <button className="w-40 py-2 bg-blue-500 text-white rounded-full mt-4 md:mt-0 shadow-md hover:bg-blue-600 transition" onClick={doctorjoinNavigate}>
                         Join for free
                     </button>
                 </div>
